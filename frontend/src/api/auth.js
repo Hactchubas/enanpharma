@@ -3,7 +3,7 @@ import api from "../api/axios";
 
 const state = reactive({
   token: localStorage.getItem("token") || null,
-  user: localStorage.getItem("userId") || null, // you can store some decoded user info here if needed
+  user: localStorage.getItem("userId") || null,
   roles: localStorage.getItem("roles") || null,
 });
 
