@@ -30,8 +30,8 @@ function logout() {
 import RegisterDropdown from './DropdownLinks.vue'
 
 const registerOptions = [
-    { label: 'Category', path: '/new/category' },
-    { label: 'Product', path: '/new/product' },
+    { label: 'Category', path: '/categories' },
+    { label: 'Product', path: '/products' },
 ]
 </script>
 

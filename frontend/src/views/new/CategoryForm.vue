@@ -1,82 +1,89 @@
 <template>
-  <div class="form-container">
-    <h1>Create New Category</h1>
-    <form @submit.prevent="createCategory">
-      <div>
-        <label>Name:</label>
-        <input v-model="name" type="text" required />
-      </div>
-      <div>
-        <label>Description:</label>
-        <input v-model="description" type="text" />
-      </div>
-      <button type="submit">Save</button>
-      <p v-if="message" class="success">{{ message }}</p>
-      <p v-if="error" class="error">{{ error }}</p>
+    <form @submit.prevent="submit">
+        <label>
+            Category Name:
+            <input v-model="name" required />
+        </label>
+        <button type="submit">{{ id ? 'Update' : 'Add' }}</button>
+        <button type="button" @click="$emit('done')">Cancel</button>
     </form>
-  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import api from '../../api/axios'
+import { ref, onMounted, watch } from 'vue'
+import auth from '@/api/auth.js'
+import api from '@/api/axios.js'
 
-const router = useRouter()
+const props = defineProps({
+    id: Number // null for new
+})
+
+const emit = defineEmits(['done'])
 
 const name = ref('')
-const description = ref('')
-const message = ref('')
-const error = ref('')
 
-const createCategory = async () => {
-  try {
-    await api.post('/categories', {
-      name: name.value,
-      description: description.value
-    })
-    message.value = 'Category created successfully!'
-    setTimeout(() => router.push('/'), 1500)
-  } catch (err) {
-    error.value = 'Error creating category'
-  }
+async function loadCategories() {
+    if (props.id) {
+        if (!auth.isLoggedIn()) {
+            categories.value = [];
+            return
+        }
+        const token = auth.state.token
+
+        const res = await api.get(`/api/categories/${props.id}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + token
+            },
+        })
+        const data = await res.data
+        name.value = data.name
+    }
 }
+
+
+
+onMounted(async () => {
+    loadCategories()
+})
+
+async function submit() {
+    const body = JSON.stringify({ id: props.id, name: name.value })
+    if (!auth.isLoggedIn()) {
+        categories.value = [];
+        return
+    }
+    const token = auth.state.token
+    if (props.id) {
+        await api.put(
+            `/api/categories/${props.id}`,
+            body,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token
+                },
+            }
+        )
+    } else {
+        await api.post(
+            '/api/categories',
+            body,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token
+                },
+            }
+        )
+    }
+
+    emit('done')
+}
+
+
+// Reload if id changes
+watch(() => props.id, () => {
+    loadCategories()
+})
 </script>
-
-<style scoped>
-.form-container {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-form div {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input {
-  padding: 6px;
-}
-
-button {
-  padding: 8px;
-  cursor: pointer;
-}
-
-.success {
-  color: green;
-}
-
-.error {
-  color: red;
-}
-</style>

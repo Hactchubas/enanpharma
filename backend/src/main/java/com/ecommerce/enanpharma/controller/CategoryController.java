@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categories")
+@RequestMapping("/api/categories")
 class CategoryController {
     private final CategoryService service;
 
@@ -37,7 +37,7 @@ class CategoryController {
     }
 
     @DeleteMapping("/{id}")
-    public boolean delete(@PathVariable Long id) {
+     public boolean delete(@PathVariable Long id) {
         return service.delete(id);
     }
 

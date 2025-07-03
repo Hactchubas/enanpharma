@@ -40,7 +40,7 @@ async function getUserInfo() {
     }
   } catch (e) {
     console.error(e);
-    alert("Error occurred.");
+    alert("Error: " + e);
   }
   return null;
 }
