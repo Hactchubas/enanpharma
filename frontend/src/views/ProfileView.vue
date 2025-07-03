@@ -61,9 +61,9 @@ async function fetchUserData(userId = null) {
   try {
     let request = ""
     if (userId) {
-      request = "http//localhost:8080/api/users/" + userId
+      request = "/api/users/" + userId
     } else {
-      request = "http://localhost:8080/api/users/username/" + username
+      request = "/api/users/username/" + username
     }
     const res = await api.get(request, {
       headers: {

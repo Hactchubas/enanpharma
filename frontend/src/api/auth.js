@@ -25,7 +25,7 @@ function isLoggedIn() {
 async function getUserInfo() {
   if (!isLoggedIn()) return null;
   try {
-    const res = await api.get("http://localhost:8080/api/users/" + state.user, {
+    const res = await api.get("/api/users/" + state.user, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -2,20 +2,20 @@
   <form @submit.prevent="login">
     <div>
       <label>Username</label>
-      <input v-model="username" type="text" required/>
+      <input v-model="username" type="text" required />
     </div>
     <div>
       <label>Password</label>
-      <input v-model="password" type="password" required/>
+      <input v-model="password" type="password" required />
     </div>
     <button type="submit">Login</button>
-    <p v-if="error" style='color: red'> {{error}} </p>
+    <p v-if="error" style='color: red'> {{ error }} </p>
   </form>
 </template>
 
 
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
 import api from "../api/axios";
 import { useRouter } from 'vue-router'
 
@@ -27,7 +27,7 @@ const router = useRouter()
 
 const login = async function login() {
   try {
-    const response = await api.post('auth/login', {
+    const response = await api.post('/api/auth/login', {
       username: username.value,
       password: password.value
     })
@@ -35,7 +35,7 @@ const login = async function login() {
     localStorage.setItem('username', username.value)
 
     router.push('/')
-    
+
   } catch (err) {
     error.value = 'Invalid credentials'
   }

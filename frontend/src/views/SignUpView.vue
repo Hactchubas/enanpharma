@@ -55,7 +55,7 @@ const form = reactive({
 
 const handleSignUp = async () => {
   try {
-    await axios.post('http://localhost:8080/api/auth/signup', form)
+    await axios.post('/api/auth/signup', form)
     alert("User created!")
     router.push('/login')
   } catch (err) {
@@ -79,7 +79,7 @@ h1 {
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr ;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 

@@ -1,6 +1,13 @@
 <template>
   <div class="home">
-    <h1 v-if="username">Welcome back, {{ username }}!</h1>
+    <div v-if="username">
+      <h1 v-if="username">Welcome back, {{ username }}!</h1>
+      <router-link to="/register/category"><button>Sign Up</button></router-link>
+    </div>
+
+
+
+
     <div v-else>
       <h1>Welcome to Enanpharma</h1>
       <router-link to="/login"><button @click='$router.push("login")'>Login</button></router-link>
@@ -16,6 +23,11 @@
 </template>
 
 <script setup>
+import CategoriesList from "../components/CategoriesList.vue";
+
+
+
+
 import { ref, onMounted } from 'vue'
 import api from '../api/axios'
 import { useRouter } from 'vue-router'
@@ -29,7 +41,7 @@ let username = ref(null)
 onMounted(async () => {
   const token = localStorage.getItem('token')
   if (token) {
-    username.value = localStorage.getItem('username')   
+    username.value = localStorage.getItem('username')
   }
 })
 
@@ -46,4 +58,3 @@ button {
   margin: 0 10px;
 }
 </style>
-
