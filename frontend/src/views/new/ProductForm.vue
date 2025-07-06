@@ -1,9 +1,15 @@
 <template>
     <form @submit.prevent="submit">
         <label>
-            Category Name:
+            Product Name:
             <input v-model="name" required />
         </label>
+
+        <label>
+            Price:
+            <input type="number" v-model.number="price" required min="0" step="0.01" />
+        </label>
+
         <button type="submit">{{ id ? 'Update' : 'Add' }}</button>
         <button type="button" @click="$emit('done')">Cancel</button>
     </form>
@@ -15,46 +21,49 @@ import auth from '@/api/auth.js'
 import api from '@/api/axios.js'
 
 const props = defineProps({
-    id: Number // null for new
+    id: Number // null or undefined for new
 })
 
 const emit = defineEmits(['done'])
 
 const name = ref('')
+const price = ref(0)
 
-async function loadCategories() {
+async function loadProduct() {
     if (props.id) {
         if (!auth.isLoggedIn()) {
             return
         }
         const token = auth.state.token
 
-        const res = await api.get(`/api/categories/${props.id}`, {
+        const res = await api.get(`/api/products/${props.id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + token
             },
         })
-        const data = await res.data
+        const data = res.data
         name.value = data.name
+        price.value = data.price
+    } else {
+        name.value = ''
+        price.value = 0
     }
 }
 
+onMounted(loadProduct)
 
-
-onMounted(async () => {
-    loadCategories()
-})
+watch(() => props.id, loadProduct)
 
 async function submit() {
-    const body = JSON.stringify({ id: props.id, name: name.value })
-    if (!auth.isLoggedIn()) {
-        return
-    }
+    if (!auth.isLoggedIn()) return
     const token = auth.state.token
+
+    const body = JSON.stringify({ id: props.id, name: name.value, price: price.value })
+
     if (props.id) {
         await api.put(
-            `/api/categories/${props.id}`,
+            `/api/products/${props.id}`,
             body,
             {
                 headers: {
@@ -65,7 +74,7 @@ async function submit() {
         )
     } else {
         await api.post(
-            '/api/categories',
+            '/api/products',
             body,
             {
                 headers: {
@@ -78,10 +87,4 @@ async function submit() {
 
     emit('done')
 }
-
-
-// Reload if id changes
-watch(() => props.id, () => {
-    loadCategories()
-})
 </script>

@@ -4,16 +4,12 @@ import HomeView from "../views/HomeView.vue";
 import SignUpView from "../views/SignUpView.vue";
 import ProfileView from "../views/ProfileView.vue";
 import CategoriesView from "../views/CategoriesView.vue";
-import Category_New from "../views/new/CategoryForm.vue";
+import ProductsView from "../views/ProductsView.vue";
 
 const routes = [
-  {
-    path: "/categories/new",
-    name: "CategorieNew",
-    component: Category_New,
-  },
   { path: "/login", name: "Login", component: LoginView },
   { path: "/categories", name: "Categories", component: CategoriesView },
+  { path: "/products", name: "Products", component: ProductsView },
   { path: "/signup", name: "SignUpView", component: SignUpView },
   { path: "/profile", name: "Profile", component: ProfileView },
   { path: "/", name: "Home", component: HomeView },
