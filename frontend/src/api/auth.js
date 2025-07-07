@@ -1,34 +1,15 @@
 import { reactive } from "vue";
 import api from "../api/axios";
 
-const state = reactive({
-  token: localStorage.getItem("token") || null,
-  user: localStorage.getItem("userId") || null,
-  roles: localStorage.getItem("roles") || null,
-});
-
-function saveToken(token) {
-  state.token = token;
-  localStorage.setItem("token", token);
-}
-
-function clearToken() {
-  state.token = null;
-  state.user = null;
-  localStorage.removeItem("token");
-}
-
-function isLoggedIn() {
-  return !!state.token;
-}
+const tokenFromStorage = localStorage.getItem("token");
+const userFromStorage = localStorage.getItem("username");
 
 async function getUserInfo() {
   try {
-    const res = await api.get("/api/users/" + state.user, {
-      method: "GET",
+    const res = await api.get("/api/users/username/" + auth.user, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + state.token,
+        Authorization: "Bearer " + auth.token,
       },
     });
 
@@ -40,7 +21,7 @@ async function getUserInfo() {
   } catch (e) {
     console.error(e);
     if (e.status == 401) {
-      clearToken();
+      auth.logout();
     } else {
       alert("Error: " + e);
     }
@@ -48,10 +29,34 @@ async function getUserInfo() {
   return null;
 }
 
-export default {
-  state,
-  saveToken,
-  clearToken,
-  isLoggedIn,
+export const auth = reactive({
+  token: tokenFromStorage,
+  user: userFromStorage,
+  isLoggedIn: () => !!auth.token,
+
+  login(token, user) {
+    auth.token = token;
+    auth.user = user;
+    localStorage.setItem("token", token);
+    localStorage.setItem("username", user);
+  },
+
+  logout() {
+    auth.token = null;
+    auth.user = null;
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+  },
+
   getUserInfo,
-};
+});
+
+export default auth;
+//export default {
+//  state,
+//  saveToken,
+//  clearToken,
+//  isLoggedIn,
+//  getUserInfo,
+//  login,
+//};

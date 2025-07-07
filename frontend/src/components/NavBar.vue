@@ -1,12 +1,17 @@
 <script setup>
 import auth from "../api/auth.js";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUpdated } from "vue";
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const info = ref({
     isAdmin: false
 })
 
-onMounted(fetchUserInfo)
+onMounted(() => {
+    if (auth.isLoggedIn()) fetchUserInfo()
+})
+onUpdated(fetchUserInfo)
 async function fetchUserInfo() {
     const res = await auth.getUserInfo()
     if (res == null) {
@@ -22,8 +27,8 @@ async function fetchUserInfo() {
 }
 
 function logout() {
-    auth.clearToken();
-    window.location.href = "/";
+    auth.logout();
+    router.push('/')
 }
 
 
@@ -40,16 +45,16 @@ const registerOptions = [
         <div class="navbar-left">
             <a href="/" class="brand">Enanpharma<span v-if='info.isAdmin'> [ADMIN]</span></a>
         </div>
+        <div class="navbar-middle">
+            <h1>
+                <a href="/profile">{{ auth.user }}</a>
+            </h1>
+        </div>
         <div class="navbar-right">
             <template v-if="auth.isLoggedIn()">
                 <div>
-                    <a href="/profile">Profile</a>
-                </div>
-                <div v-if="info.isAdmin">
-                    <RegisterDropdown :items="registerOptions" button-text="Register" />
-                </div>
-                <div>
-                    <button @click="logout">Logout</button>
+                    <RegisterDropdown v-if="info.isAdmin" :items="registerOptions" button-text="Register" />
+                    <a @click="logout">Logout</a>
                 </div>
             </template>
             <template v-else>
@@ -75,23 +80,5 @@ const registerOptions = [
     color: white;
     text-decoration: none;
     margin: 0 10px;
-}
-
-.navbar button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #444;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.navbar button:hover {
-    background-color: #666;
-}
-
-.navbar .brand {
-    font-weight: bold;
-    font-size: 1.2em;
 }
 </style>
