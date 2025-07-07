@@ -1,11 +1,13 @@
 <template>
     <div>
-        <h1>Products</h1>
-        <button @click="showForm()">➕ Add Product</button>
 
+        <div class="header">
+            <h1>Products</h1>
+            <button v-if="!formVisible" @click="showForm(add)">➕</button>
+        </div>
         <ProductForm v-if="formVisible" :key="editingId" :id="editingId" @done="onFormDone" />
 
-        <ProductsList v-if="!formVisible" :refresh-key="refreshKey" @edit="showForm" />
+        <ProductsList :refresh-key="refreshKey" @edit="showForm" />
     </div>
 </template>
 
@@ -29,3 +31,15 @@ function onFormDone() {
     refreshKey.value++
 }
 </script>
+<style scoped>
+* {
+    color: white;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 10px;
+}
+</style>

@@ -26,6 +26,8 @@
 
 <script setup>
 import { onMounted, ref, watch } from 'vue'
+import auth from '../api/auth.js'
+import api from '../api/axios.js'
 
 const props = defineProps({
     refreshKey: Number
@@ -46,15 +48,25 @@ async function fetchProducts() {
         },
     });
     if (res.status != 200) {
-        categories.value = [];
+        products.value = [];
         return
     }
-    categories.value = await res.data
+    products.value = await res.data
 }
 
 async function deleteProduct(id) {
-    await fetch(`/api/products/delete/${id}`, { method: 'POST' })
-    fetchProducts()
+    if (!auth.isLoggedIn()) {
+        products.value = [];
+        return
+    }
+    const token = auth.state.token
+    await api.delete(`/api/products/${id}`, {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+        },
+    })
+    await fetchProducts()
 }
 
 onMounted(fetchProducts)

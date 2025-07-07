@@ -23,7 +23,6 @@ function isLoggedIn() {
 }
 
 async function getUserInfo() {
-  if (!isLoggedIn()) return null;
   try {
     const res = await api.get("/api/users/" + state.user, {
       method: "GET",
@@ -40,7 +39,11 @@ async function getUserInfo() {
     }
   } catch (e) {
     console.error(e);
-    alert("Error: " + e);
+    if (e.status == 401) {
+      clearToken();
+    } else {
+      alert("Error: " + e);
+    }
   }
   return null;
 }
