@@ -35,7 +35,7 @@ async function fetchCategories() {
         categories.value = [];
         return
     }
-    const token = auth.state.token
+    const token = auth.token
     const res = await api.get("/api/categories", {
         headers: {
             "Content-Type": "application/json",
@@ -54,7 +54,7 @@ async function deleteCategory(id) {
         categories.value = [];
         return
     }
-    const token = auth.state.token
+    const token = auth.token
     await api.delete(`/api/categories/${id}`, {
         headers: {
             "Content-Type": "application/json",

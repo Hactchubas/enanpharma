@@ -40,7 +40,7 @@ async function fetchProducts() {
         products.value = [];
         return
     }
-    const token = auth.state.token
+    const token = auth.token
     const res = await api.get("/api/products", {
         headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ async function deleteProduct(id) {
         products.value = [];
         return
     }
-    const token = auth.state.token
+    const token = auth.token
     await api.delete(`/api/products/${id}`, {
         headers: {
             "Content-Type": "application/json",

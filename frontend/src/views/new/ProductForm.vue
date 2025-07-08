@@ -51,7 +51,7 @@ async function fetchCategories() {
         categories.value = [];
         return
     }
-    const token = auth.state.token
+    const token = auth.token
     const res = await api.get("/api/categories", {
         headers: {
             "Content-Type": "application/json",
@@ -70,7 +70,7 @@ async function loadProduct() {
         if (!auth.isLoggedIn()) {
             return
         }
-        const token = auth.state.token
+        const token = auth.token
 
         const res = await api.get(`/api/products/${props.id}`, {
             headers: {
@@ -99,7 +99,7 @@ watch(() => props.id, loadProduct)
 
 async function submit() {
     if (!auth.isLoggedIn()) return
-    const token = auth.state.token
+    const token = auth.token
 
     const body = JSON.stringify({
         id: props.id,

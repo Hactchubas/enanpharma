@@ -27,7 +27,7 @@ async function loadCategories() {
         if (!auth.isLoggedIn()) {
             return
         }
-        const token = auth.state.token
+        const token = auth.token
 
         const res = await api.get(`/api/categories/${props.id}`, {
             headers: {
@@ -51,7 +51,7 @@ async function submit() {
     if (!auth.isLoggedIn()) {
         return
     }
-    const token = auth.state.token
+    const token = auth.token
     if (props.id) {
         await api.put(
             `/api/categories/${props.id}`,

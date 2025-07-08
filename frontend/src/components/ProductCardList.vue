@@ -18,14 +18,7 @@ import { auth } from '@/api/auth.js'
 const products = ref([])
 
 async function fetchProducts() {
-    if (!auth.isLoggedIn()) return
-
-    const token = auth.token
-    const res = await api.get('/api/products', {
-        headers: {
-            Authorization: 'Bearer ' + token
-        }
-    })
+    const res = await api.get('/api/products')
 
     products.value = res.data
 }
