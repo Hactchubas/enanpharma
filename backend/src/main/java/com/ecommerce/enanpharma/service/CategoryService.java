@@ -2,6 +2,7 @@ package com.ecommerce.enanpharma.service;
 
 import com.ecommerce.enanpharma.dto.CategoryDTO;
 import com.ecommerce.enanpharma.entity.Category;
+import com.ecommerce.enanpharma.exception.ResourceNotFoundException;
 import com.ecommerce.enanpharma.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class CategoryService {
     public CategoryDTO findById(Long id) {
         return repository.findById(id)
                 .map(category -> new CategoryDTO(category.getId(), category.getName()))
-                .orElse(null);
+                .orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + id));
     }
 
     public CategoryDTO create(CategoryDTO categoryDTO) {
@@ -39,13 +40,14 @@ public class CategoryService {
             cat.setName(categoryDTO.getName());
             Category updated = repository.save(cat);
             return new CategoryDTO(updated.getId(), updated.getName());
-        }).orElse(null);
+        }).orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + id));
     }
 
     public boolean delete(Long id) {
-        return repository.findById(id).map(cat -> {
-            repository.delete(cat);
-            return true;
-        }).orElse(false);
+        if (!repository.existsById(id)) {
+            throw new ResourceNotFoundException("Category not found with id: " + id);
+        }
+        repository.deleteById(id);
+        return true;
     }
 }

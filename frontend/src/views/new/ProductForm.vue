@@ -21,6 +21,10 @@
             Price:
             <input type="number" v-model.number="price" required min="0" step="0.01" />
         </label>
+        <label>
+            Quantity:
+            <input type="number" v-model.number="quantity" required min="0" step="1" />
+        </label>
         <div>
             <button type="submit">{{ id ? 'Update' : 'Add' }}</button>
             <button type="button" @click="$emit('done')">Cancel</button>
@@ -42,6 +46,7 @@ const emit = defineEmits(['done'])
 const name = ref('')
 const description = ref('')
 const price = ref(0)
+const quantity = ref(0)
 const selectedCategory = ref('')
 
 const categories = ref([])
@@ -82,11 +87,13 @@ async function loadProduct() {
         name.value = data.name
         price.value = data.price
         description.value = data.description
+        quantity.value = data.quantity
         selectedCategory.value = data.categoryId
 
     } else {
         name.value = ''
         price.value = 0
+        quantity.value = 0
     }
 }
 
@@ -106,6 +113,7 @@ async function submit() {
         name: name.value,
         description: description.value,
         price: price.value,
+        quantity: quantity.value,
         categoryId: selectedCategory.value
     })
 

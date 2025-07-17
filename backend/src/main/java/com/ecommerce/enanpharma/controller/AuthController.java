@@ -31,13 +31,9 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) {
-        try {
-            userService.create(userDTO);
-            return ResponseEntity.status(HttpStatus.CREATED).build();
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body(e.getMessage());
-        }
+    public ResponseEntity<String> registerUser(@RequestBody UserDTO userDTO) {
+        userService.create(userDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body("User created successfully");
     }
 
 

@@ -1,26 +1,22 @@
 package com.ecommerce.enanpharma.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Set;
 
-public class UserDTO {
+public class UserResponseDTO {
     private Long id;
     private String username;
-//    @JsonIgnore
-    private String password;
     private Set<String> roles;
     private String firstName;
     private String lastName;
     private String email;
     private String address;
 
-    public UserDTO() {
+    public UserResponseDTO() {
     }
 
-    public UserDTO(Long id, String username, String password, Set<String> roles, String firstName, String lastName, String email, String address) {
+    public UserResponseDTO(Long id, String username, Set<String> roles, String firstName, String lastName, String email, String address) {
         this.id = id;
         this.username = username;
-        this.password = password;
         this.roles = roles;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -82,13 +78,5 @@ public class UserDTO {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

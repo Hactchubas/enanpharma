@@ -5,6 +5,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Quantity</th>
                 <th class="actions-column">Actions</th>
             </tr>
         </thead>
@@ -13,6 +14,7 @@
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
+                <td :class="getQuantityClass(product.quantity)">{{ product.quantity }}</td>
                 <td class="actions-column">
                     <div class="actions">
                         <button @click="$emit('edit', product.id)">✏️</button>
@@ -71,6 +73,13 @@ async function deleteProduct(id) {
 
 onMounted(fetchProducts)
 
+// Function to determine CSS class for quantity display
+function getQuantityClass(quantity) {
+    if (quantity === 0) return 'quantity-out'
+    if (quantity <= 5) return 'quantity-low'
+    return 'quantity-normal'
+}
+
 watch(() => props.refreshKey, () => {
     fetchProducts()
 })
@@ -100,5 +109,20 @@ watch(() => props.refreshKey, () => {
     display: flex;
     justify-content: flex-end;
     gap: 0.5rem;
+}
+
+.quantity-normal {
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.quantity-low {
+    color: #FF9800;
+    font-weight: bold;
+}
+
+.quantity-out {
+    color: #F44336;
+    font-weight: bold;
 }
 </style>

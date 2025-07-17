@@ -1,6 +1,7 @@
 package com.ecommerce.enanpharma.controller;
 
 import com.ecommerce.enanpharma.dto.UserDTO;
+import com.ecommerce.enanpharma.dto.UserResponseDTO;
 import com.ecommerce.enanpharma.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,23 +16,23 @@ public class UserController {
     }
 
     @GetMapping
-    public List<UserDTO> getAllUsers() {
-        return userService.findAll();
+    public List<UserResponseDTO> getAllUsers() {
+        return userService.findAllForResponse();
     }
 
     @GetMapping("/{id}")
-    public UserDTO getUserById(@PathVariable Long id) {
-        return userService.findById(id);
+    public UserResponseDTO getUserById(@PathVariable Long id) {
+        return userService.findByIdForResponse(id);
     }
     @GetMapping("/username/{username}")
-    public UserDTO getUserByUsername(@PathVariable String username) {
-        return userService.findByUsername(username);
+    public UserResponseDTO getUserByUsername(@PathVariable String username) {
+        return userService.findByUsernameForResponse(username);
     }
 
 
     @PutMapping("/{id}")
-    public UserDTO updateUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
-        return userService.update(id, userDTO);
+    public UserResponseDTO updateUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
+        return userService.updateForResponse(id, userDTO);
     }
 
     @DeleteMapping("/{id}")

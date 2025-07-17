@@ -5,6 +5,7 @@
             <div class="product-info">
                 <h3>{{ product.name }}</h3>
                 <p class="price">R$ {{ product.price.toFixed(2) }}</p>
+                <p class="stock-status" :class="getStockStatusClass(product.quantity)">{{ getStockStatusText(product.quantity) }}</p>
             </div>
         </div>
     </div>
@@ -21,6 +22,20 @@ async function fetchProducts() {
     const res = await api.get('/api/products')
 
     products.value = res.data
+}
+
+// Function to determine stock status text
+function getStockStatusText(quantity) {
+    if (quantity === 0) return 'Out of Stock'
+    if (quantity <= 5) return 'Almost Out of Stock'
+    return 'In Stock'
+}
+
+// Function to determine CSS class for stock status
+function getStockStatusClass(quantity) {
+    if (quantity === 0) return 'out-of-stock'
+    if (quantity <= 5) return 'almost-out'
+    return 'in-stock'
 }
 
 onMounted(fetchProducts)
@@ -63,5 +78,22 @@ onMounted(fetchProducts)
 .price {
     font-weight: bold;
     color: whitesmoke;
+}
+
+.stock-status {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.in-stock {
+    color: #4CAF50;
+}
+
+.almost-out {
+    color: #FF9800;
+}
+
+.out-of-stock {
+    color: #F44336;
 }
 </style>

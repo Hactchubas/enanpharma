@@ -26,5 +26,8 @@ public class Product {
     @Column(nullable = false)
     private Long price;
 
+    @Column(nullable = false)
+    private Integer quantity;
+
     public Product(){}
 }
