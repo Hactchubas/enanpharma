@@ -1,11 +1,13 @@
 <template>
     <div class="home">
+        <AdminPanel />
         <ProductCardList />
     </div>
 </template>
 
 <script setup>
 import ProductCardList from "../components/ProductCardList.vue";
+import AdminPanel from "../components/AdminPanel.vue";
 
 
 

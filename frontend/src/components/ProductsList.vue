@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
@@ -12,6 +13,10 @@
         <tbody>
             <tr v-for="product in products" :key="product.id">
                 <td>{{ product.id }}</td>
+                <td class="image-cell">
+                    <img v-if="product.imageUrl" :src="`http://localhost:8080${product.imageUrl}`" :alt="product.name" class="product-image" />
+                    <span v-else class="no-image">No image</span>
+                </td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
                 <td :class="getQuantityClass(product.quantity)">{{ product.quantity }}</td>
@@ -124,5 +129,24 @@ watch(() => props.refreshKey, () => {
 .quantity-out {
     color: #F44336;
     font-weight: bold;
+}
+
+.image-cell {
+    width: 80px;
+    text-align: center;
+}
+
+.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.no-image {
+    color: #999;
+    font-style: italic;
+    font-size: 0.9em;
 }
 </style>

@@ -1,0 +1,611 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.ecommerce:backend >------------------------
+[INFO] Building enanpharma 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.0:run (default-cli) > test-compile @ backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ backend ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.5.0:run (default-cli) < test-compile @ backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.0:run (default-cli) @ backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.0)
+
+2025-07-17T20:29:15.611-03:00  INFO 59191 --- [enanpharma] [           main] c.e.enanpharma.EnanpharmaApplication     : Starting EnanpharmaApplication using Java 21.0.7 with PID 59191 (/home/ksm/Studying/SMD/S7/Prog_Web/Project/enanpharma/backend/target/classes started by ksm in /home/ksm/Studying/SMD/S7/Prog_Web/Project/enanpharma/backend)
+2025-07-17T20:29:15.612-03:00  INFO 59191 --- [enanpharma] [           main] c.e.enanpharma.EnanpharmaApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-07-17T20:29:15.951-03:00  INFO 59191 --- [enanpharma] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-17T20:29:15.992-03:00  INFO 59191 --- [enanpharma] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 7 JPA repository interfaces.
+2025-07-17T20:29:16.271-03:00  INFO 59191 --- [enanpharma] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-17T20:29:16.279-03:00  INFO 59191 --- [enanpharma] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-17T20:29:16.279-03:00  INFO 59191 --- [enanpharma] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-17T20:29:16.301-03:00  INFO 59191 --- [enanpharma] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-17T20:29:16.302-03:00  INFO 59191 --- [enanpharma] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 671 ms
+2025-07-17T20:29:16.365-03:00  INFO 59191 --- [enanpharma] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-17T20:29:16.387-03:00  INFO 59191 --- [enanpharma] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-17T20:29:16.404-03:00  INFO 59191 --- [enanpharma] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-17T20:29:16.550-03:00  INFO 59191 --- [enanpharma] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-17T20:29:16.563-03:00  INFO 59191 --- [enanpharma] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-17T20:29:16.615-03:00  INFO 59191 --- [enanpharma] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@57c6feea
+2025-07-17T20:29:16.615-03:00  INFO 59191 --- [enanpharma] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-17T20:29:16.647-03:00  INFO 59191 --- [enanpharma] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-17T20:29:17.173-03:00  INFO 59191 --- [enanpharma] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-17T20:29:17.195-03:00  INFO 59191 --- [enanpharma] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-17T20:29:17.378-03:00  INFO 59191 --- [enanpharma] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-07-17T20:29:17.418-03:00  INFO 59191 --- [enanpharma] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-17T20:29:17.856-03:00  WARN 59191 --- [enanpharma] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-17T20:29:18.082-03:00  INFO 59191 --- [enanpharma] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-17T20:29:18.087-03:00  INFO 59191 --- [enanpharma] [           main] c.e.enanpharma.EnanpharmaApplication     : Started EnanpharmaApplication in 2.684 seconds (process running for 2.837)
+2025-07-17T20:29:34.257-03:00  INFO 59191 --- [enanpharma] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-17T20:29:34.257-03:00  INFO 59191 --- [enanpharma] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-17T20:29:34.258-03:00  INFO 59191 --- [enanpharma] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: insert into address (city,complement,neighborhood,number,state,street,zip_code) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (address_id,created_at,customer_email,customer_name,customer_phone,payment_installments,payment_method,status,total,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: insert into order_items (order_id,product_id,quantity,total,unit_price) values (?,?,?,?,?)
+Hibernate: update orders set address_id=?,created_at=?,customer_email=?,customer_name=?,customer_phone=?,payment_installments=?,payment_method=?,status=?,total=?,updated_at=?,user_id=? where id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select oi1_0.id,oi1_0.order_id,oi1_0.product_id,oi1_0.quantity,oi1_0.total,oi1_0.unit_price from order_items oi1_0 left join orders o1_0 on o1_0.id=oi1_0.order_id where o1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: insert into address (city,complement,neighborhood,number,state,street,zip_code) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (address_id,created_at,customer_email,customer_name,customer_phone,payment_installments,payment_method,status,total,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: insert into order_items (order_id,product_id,quantity,total,unit_price) values (?,?,?,?,?)
+2025-07-17T20:29:59.968-03:00  WARN 59191 --- [enanpharma] [nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 22003
+2025-07-17T20:29:59.968-03:00 ERROR 59191 --- [enanpharma] [nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERRO: estouro de campo numeric
+  Detalhe: Um campo com precisão 10, escala 2 deve arredondar para um valor absoluto menor do que 10^8.
+DataIntegrityViolationException: could not execute statement [ERRO: estouro de campo numeric
+  Detalhe: Um campo com precisão 10, escala 2 deve arredondar para um valor absoluto menor do que 10^8.] [insert into order_items (order_id,product_id,quantity,total,unit_price) values (?,?,?,?,?)]; SQL [insert into order_items (order_id,product_id,quantity,total,unit_price) values (?,?,?,?,?)]
+Root cause: org.postgresql.util.PSQLException: ERRO: estouro de campo numeric
+  Detalhe: Um campo com precisão 10, escala 2 deve arredondar para um valor absoluto menor do que 10^8.
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: insert into address (city,complement,neighborhood,number,state,street,zip_code) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (address_id,created_at,customer_email,customer_name,customer_phone,payment_installments,payment_method,status,total,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: insert into order_items (order_id,product_id,quantity,total,unit_price) values (?,?,?,?,?)
+2025-07-17T20:30:38.994-03:00  WARN 59191 --- [enanpharma] [nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 22003
+2025-07-17T20:30:38.994-03:00 ERROR 59191 --- [enanpharma] [nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERRO: estouro de campo numeric
+  Detalhe: Um campo com precisão 10, escala 2 deve arredondar para um valor absoluto menor do que 10^8.
+DataIntegrityViolationException: could not execute statement [ERRO: estouro de campo numeric
+  Detalhe: Um campo com precisão 10, escala 2 deve arredondar para um valor absoluto menor do que 10^8.] [insert into order_items (order_id,product_id,quantity,total,unit_price) values (?,?,?,?,?)]; SQL [insert into order_items (order_id,product_id,quantity,total,unit_price) values (?,?,?,?,?)]
+Root cause: org.postgresql.util.PSQLException: ERRO: estouro de campo numeric
+  Detalhe: Um campo com precisão 10, escala 2 deve arredondar para um valor absoluto menor do que 10^8.
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: insert into address (city,complement,neighborhood,number,state,street,zip_code) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (address_id,created_at,customer_email,customer_name,customer_phone,payment_installments,payment_method,status,total,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: insert into order_items (order_id,product_id,quantity,total,unit_price) values (?,?,?,?,?)
+Hibernate: update orders set address_id=?,created_at=?,customer_email=?,customer_name=?,customer_phone=?,payment_installments=?,payment_method=?,status=?,total=?,updated_at=?,user_id=? where id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select oi1_0.id,oi1_0.order_id,oi1_0.product_id,oi1_0.quantity,oi1_0.total,oi1_0.unit_price from order_items oi1_0 left join orders o1_0 on o1_0.id=oi1_0.order_id where o1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: update product set category_id=?,description=?,image_url=?,name=?,price=?,quantity=? where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select count(*) from product p1_0 where p1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: delete from product where id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select o1_0.id,o1_0.address_id,o1_0.created_at,o1_0.customer_email,o1_0.customer_name,o1_0.customer_phone,o1_0.payment_installments,o1_0.payment_method,o1_0.status,o1_0.total,o1_0.updated_at,o1_0.user_id from orders o1_0 left join app_user u1_0 on u1_0.id=o1_0.user_id where u1_0.id=? order by o1_0.created_at desc
+Hibernate: select a1_0.id,a1_0.city,a1_0.complement,a1_0.neighborhood,a1_0.number,a1_0.state,a1_0.street,a1_0.zip_code from address a1_0 where a1_0.id=?
+Hibernate: select a1_0.id,a1_0.city,a1_0.complement,a1_0.neighborhood,a1_0.number,a1_0.state,a1_0.street,a1_0.zip_code from address a1_0 where a1_0.id=?
+Hibernate: select oi1_0.id,oi1_0.order_id,oi1_0.product_id,oi1_0.quantity,oi1_0.total,oi1_0.unit_price from order_items oi1_0 left join orders o1_0 on o1_0.id=oi1_0.order_id where o1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select oi1_0.id,oi1_0.order_id,oi1_0.product_id,oi1_0.quantity,oi1_0.total,oi1_0.unit_price from order_items oi1_0 left join orders o1_0 on o1_0.id=oi1_0.order_id where o1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select o1_0.id,o1_0.address_id,o1_0.created_at,o1_0.customer_email,o1_0.customer_name,o1_0.customer_phone,o1_0.payment_installments,o1_0.payment_method,o1_0.status,o1_0.total,o1_0.updated_at,o1_0.user_id from orders o1_0 left join app_user u1_0 on u1_0.id=o1_0.user_id where u1_0.id=? order by o1_0.created_at desc
+Hibernate: select a1_0.id,a1_0.city,a1_0.complement,a1_0.neighborhood,a1_0.number,a1_0.state,a1_0.street,a1_0.zip_code from address a1_0 where a1_0.id=?
+Hibernate: select a1_0.id,a1_0.city,a1_0.complement,a1_0.neighborhood,a1_0.number,a1_0.state,a1_0.street,a1_0.zip_code from address a1_0 where a1_0.id=?
+Hibernate: select oi1_0.id,oi1_0.order_id,oi1_0.product_id,oi1_0.quantity,oi1_0.total,oi1_0.unit_price from order_items oi1_0 left join orders o1_0 on o1_0.id=oi1_0.order_id where o1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,c1_0.id,c1_0.name,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0 join category c1_0 on c1_0.id=p1_0.category_id where p1_0.id=?
+Hibernate: select oi1_0.id,oi1_0.order_id,oi1_0.product_id,oi1_0.quantity,oi1_0.total,oi1_0.unit_price from order_items oi1_0 left join orders o1_0 on o1_0.id=oi1_0.order_id where o1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+2025-07-17T21:17:51.973-03:00 ERROR 59191 --- [enanpharma] [io-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.MalformedJwtException: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 0
+	at io.jsonwebtoken.impl.JwtTokenizer.tokenize(JwtTokenizer.java:102) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:370) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at com.ecommerce.enanpharma.security.JwtTokenProvider.getUsernameFromToken(JwtTokenProvider.java:48) ~[classes/:na]
+	at com.ecommerce.enanpharma.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:33) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.0.jar:6.5.0]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.0.jar:6.5.0]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.0.jar:6.5.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select p1_0.id,p1_0.category_id,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.quantity from product p1_0
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select c1_0.id,c1_0.name from category c1_0 where c1_0.id=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.address,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from app_user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  54:20 min
+[INFO] Finished at: 2025-07-17T21:23:35-03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.0:run (default-cli) on project backend: Process terminated with exit code: 137 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

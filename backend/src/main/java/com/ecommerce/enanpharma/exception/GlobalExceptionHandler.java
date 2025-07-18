@@ -54,6 +54,9 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponse> handleDataIntegrityViolation(
             DataIntegrityViolationException ex, HttpServletRequest request) {
+        System.out.println("DataIntegrityViolationException: " + ex.getMessage());
+        System.out.println("Root cause: " + ex.getRootCause());
+        
         String message = "Data integrity violation";
         if (ex.getMessage().contains("duplicate key")) {
             message = "Resource already exists with this unique identifier";
