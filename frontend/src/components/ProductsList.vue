@@ -147,7 +147,7 @@
                             <td class="td-actions">
                                 <div class="action-buttons">
                                     <button 
-                                        @click="$emit('edit', product.id)" 
+                                        @click="$emit('../api/axios.js', product.id)" 
                                         class="action-btn edit-btn"
                                         aria-label="Editar produto"
                                         title="Editar produto"

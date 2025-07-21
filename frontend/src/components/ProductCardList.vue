@@ -135,7 +135,7 @@ const filteredProducts = computed(() => {
     if (!selectedCategory.value) {
         return products.value
     }
-    return products.value.filter(product => product.category?.id === selectedCategory.value)
+    return products.value.filter(product => product.categoryId === selectedCategory.value)
 })
 
 async function fetchProducts() {
@@ -209,10 +209,6 @@ async function fetchCategories() {
     }
 }
 
-function filterProducts() {
-    // This function is called when the select changes
-    // The filtering is handled by the computed property
-}
 
 onMounted(async () => {
     await Promise.all([fetchProducts(), fetchCategories()])

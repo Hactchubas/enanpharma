@@ -34,6 +34,7 @@ public class UserService {
     }
 
     public UserDTO create(UserDTO userDTO) {
+        userDTO.setRoles(Set.of("USER"));
         User user = toEntity(userDTO);
         String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         user.setPassword(hashedPassword);

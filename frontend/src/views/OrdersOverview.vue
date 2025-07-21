@@ -77,12 +77,12 @@
                             Filtrar por Status
                         </label>
                         <select v-model="statusFilter" class="filter-select">
-                            <option value="">Todos os status</option>
-                            <option value="PENDING">Pendentes</option>
-                            <option value="PROCESSING">Processando</option>
-                            <option value="SHIPPED">Enviados</option>
-                            <option value="DELIVERED">Entregues</option>
-                            <option value="CANCELLED">Cancelados</option>
+                            <option value="">All</option>
+                            <option value="PENDING">Pendign</option>
+                            <option value="PROCESSING">Processing</option>
+                            <option value="SHIPPED">Shipped</option>
+                            <option value="DELIVERED">Delivered</option>
+                            <option value="CANCELLED">Cancelled</option>
                         </select>
                     </div>
                     
@@ -97,8 +97,8 @@
                             Ordenar por Data
                         </label>
                         <select v-model="sortOrder" class="filter-select">
-                            <option value="desc">Mais recentes primeiro</option>
-                            <option value="asc">Mais antigos primeiro</option>
+                            <option value="desc"> More recent first</option>
+                            <option value="asc">More older first</option>
                         </select>
                     </div>
                     
