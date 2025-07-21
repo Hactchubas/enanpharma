@@ -36,7 +36,7 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
-import axios from 'axios'
+import api from '../api/axios.js'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -55,7 +55,7 @@ const form = reactive({
 
 const handleSignUp = async () => {
   try {
-    await axios.post('/api/auth/signup', form)
+    await api.post('/api/auth/signup', form)
     alert("User created!")
     router.push('/login')
   } catch (err) {

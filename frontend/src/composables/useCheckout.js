@@ -103,7 +103,7 @@ export function useCheckout() {
         try {
             // Check if user is logged in
             if (!auth.isLoggedIn()) {
-                throw new Error('User must be logged in to place an order')
+                throw new Error('Efetue o login para realizar o pagamento')
             }
 
             // Convert frontend payment method to backend format
@@ -149,6 +149,8 @@ export function useCheckout() {
             console.error('Error processing order:', error)
             if (error.response?.data?.message) {
                 orderError.value = error.response.data.message
+            } else if (error.message){
+                orderError.value = error.message
             } else {
                 orderError.value = 'Erro ao processar pedido. Tente novamente.'
             }
