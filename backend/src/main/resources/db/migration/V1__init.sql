@@ -111,8 +111,13 @@ CREATE TABLE public.product (
 );
 
 INSERT INTO public.product (id, name, description, category_id, price, image_url) VALUES
-(1, 'Paracetamol', 'Pain reliever and fever reducer', 1, 1500, '/uploads/products/paracetamol.png'),
-(2, 'Ibuprofen', 'NSAID used for pain and inflammation', 1, 1800, '/uploads/products/ibuprofen.png');
+(1, 'Paracetamol', 'Pain reliever and fever reducer', 1, 15, '/uploads/products/paracetamol.png'),
+(2, 'Ibuprofen', 'NSAID used for pain and inflammation', 1, 18, '/uploads/products/ibuprofen.png'),
+(3, 'Calcium Carbonate', 'Used to treat heartburn and indigestion', 4, 8, '/uploads/products/calcium_carbonate.png'),
+(4, 'Amoxicillin', 'Broad-spectrum penicillin antibiotic', 2, 35, '/uploads/products/amoxicillin.png'),
+(5, 'Azithromycin', 'Macrolide antibiotic for infections', 2, 48, '/uploads/products/azithromycin.png'),
+(6, 'Loratadine', 'Non-drowsy allergy medication', 3, 11, '/uploads/products/loratadine.png'),
+(7, 'Aspirin', 'Used to reduce pain, fever, or inflammation', 1, 12, '/uploads/products/aspirin.png');
 
 
 ALTER TABLE public.product OWNER TO application;
