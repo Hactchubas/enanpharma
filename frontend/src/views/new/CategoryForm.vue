@@ -81,7 +81,7 @@ async function loadCategories() {
         }
         const token = auth.token
 
-        const res = await api.get(`/api/categories/${props.id}`, {
+        const res = await api.get(`/categories/${props.id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + token
@@ -112,7 +112,7 @@ async function submit() {
         
         if (props.id) {
             await api.put(
-                `/api/categories/${props.id}`,
+                `/categories/${props.id}`,
                 body,
                 {
                     headers: {
@@ -123,7 +123,7 @@ async function submit() {
             )
         } else {
             await api.post(
-                '/api/categories',
+                '/categories',
                 body,
                 {
                     headers: {

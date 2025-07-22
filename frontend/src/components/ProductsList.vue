@@ -147,7 +147,7 @@
                             <td class="td-actions">
                                 <div class="action-buttons">
                                     <button 
-                                        @click="$emit('../api/axios.js', product.id)" 
+                                        @click="editProduct(product.id)" 
                                         class="action-btn edit-btn"
                                         aria-label="Editar produto"
                                         title="Editar produto"
@@ -208,6 +208,7 @@ import { onMounted, ref, watch } from 'vue'
 import auth from '../api/auth.js'
 import api from '../api/axios.js'
 
+const emit = defineEmits(['edit'])
 const props = defineProps({
     refreshKey: Number
 })
@@ -224,7 +225,7 @@ async function fetchCategories() {
     }
     try {
         const token = auth.token
-        const res = await api.get("/api/categories", {
+        const res = await api.get("/categories", {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer " + token,
@@ -245,7 +246,7 @@ async function fetchProducts() {
         return
     }
     const token = auth.token
-    const res = await api.get("/api/products", {
+    const res = await api.get("/products", {
         headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,
@@ -256,6 +257,11 @@ async function fetchProducts() {
         return
     }
     products.value = await res.data
+}
+
+function editProduct(id = null){
+  console.log(id)
+  emit('edit', id)
 }
 
 function confirmDelete(product) {
@@ -274,7 +280,7 @@ async function executeDelete() {
     }
     
     const token = auth.token
-    await api.delete(`/api/products/${productToDelete.value.id}`, {
+    await api.delete(`/products/${productToDelete.value.id}`, {
         headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,

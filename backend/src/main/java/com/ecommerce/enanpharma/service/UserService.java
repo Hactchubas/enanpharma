@@ -35,6 +35,7 @@ public class UserService {
 
     public UserDTO create(UserDTO userDTO) {
         userDTO.setRoles(Set.of("USER"));
+
         User user = toEntity(userDTO);
         String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         user.setPassword(hashedPassword);
@@ -67,7 +68,6 @@ public class UserService {
         existingUser.setEmail(userDTO.getEmail());
         existingUser.setFirstName(userDTO.getFirstName());
         existingUser.setLastName(userDTO.getLastName());
-        existingUser.setAddress(userDTO.getAddress());
 
         if (userDTO.getRoles() != null && !userDTO.getRoles().isEmpty()) {
             Set<Role> roles = userDTO.getRoles().stream()
@@ -123,7 +123,6 @@ public class UserService {
         existingUser.setEmail(userDTO.getEmail());
         existingUser.setFirstName(userDTO.getFirstName());
         existingUser.setLastName(userDTO.getLastName());
-        existingUser.setAddress(userDTO.getAddress());
 
         if (userDTO.getRoles() != null) {
             Set<Role> roles = userDTO.getRoles().stream()
@@ -151,7 +150,6 @@ public class UserService {
         user.setFirstName(userDTO.getFirstName());
         user.setLastName(userDTO.getLastName());
         user.setEmail(userDTO.getEmail());
-        user.setAddress(userDTO.getAddress());
 
         Set<Role> roles = new HashSet<>();
         if (userDTO.getRoles() != null && !userDTO.getRoles().isEmpty()) {
@@ -182,8 +180,7 @@ public class UserService {
                 roleNames,
                 user.getFirstName(),
                 user.getLastName(),
-                user.getEmail(),
-                user.getAddress()
+                user.getEmail()
         );
     }
 
@@ -198,8 +195,7 @@ public class UserService {
                 roleNames,
                 user.getFirstName(),
                 user.getLastName(),
-                user.getEmail(),
-                user.getAddress()
+                user.getEmail()
         );
     }
 }

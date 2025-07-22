@@ -232,7 +232,7 @@ async function fetchCategories() {
         return
     }
     const token = auth.token
-    const res = await api.get("/api/categories", {
+    const res = await api.get("/categories", {
         headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,
@@ -252,7 +252,7 @@ async function loadProduct() {
         }
         const token = auth.token
 
-        const res = await api.get(`/api/products/${props.id}`, {
+        const res = await api.get(`/products/${props.id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + token
@@ -334,7 +334,7 @@ async function uploadProductImage(productId) {
         const formData = new FormData()
         formData.append('file', selectedFile.value)
         
-        const response = await api.post(`/api/products/${productId}/image`, formData, {
+        const response = await api.post(`/products/${productId}/image`, formData, {
             headers: {
                 'Authorization': 'Bearer ' + token,
                 'Content-Type': 'multipart/form-data'
@@ -373,7 +373,7 @@ async function submit() {
         
         if (props.id) {
             await api.put(
-                `/api/products/${props.id}`,
+                `/products/${props.id}`,
                 body,
                 {
                     headers: {
@@ -384,7 +384,7 @@ async function submit() {
             )
         } else {
             const response = await api.post(
-                '/api/products',
+                '/products',
                 body,
                 {
                     headers: {

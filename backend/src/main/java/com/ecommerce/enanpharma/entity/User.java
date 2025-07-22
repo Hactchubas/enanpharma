@@ -29,7 +29,6 @@ public class User {
 
     @Column(unique = true)
     private String email;
-    private String address;
 
 
     public Set<Role> getRoles() {
@@ -86,13 +85,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 }

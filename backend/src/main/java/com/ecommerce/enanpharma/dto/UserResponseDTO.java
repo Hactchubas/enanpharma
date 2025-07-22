@@ -9,19 +9,17 @@ public class UserResponseDTO {
     private String firstName;
     private String lastName;
     private String email;
-    private String address;
 
     public UserResponseDTO() {
     }
 
-    public UserResponseDTO(Long id, String username, Set<String> roles, String firstName, String lastName, String email, String address) {
+    public UserResponseDTO(Long id, String username, Set<String> roles, String firstName, String lastName, String email) {
         this.id = id;
         this.username = username;
         this.roles = roles;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.address = address;
     }
 
     public Long getId() {
@@ -72,11 +70,4 @@ public class UserResponseDTO {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 }

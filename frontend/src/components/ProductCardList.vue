@@ -139,7 +139,7 @@ const filteredProducts = computed(() => {
 })
 
 async function fetchProducts() {
-    const res = await api.get('/api/products')
+    const res = await api.get('/products')
     
     // Sort products by priority: low stock (1-5) first, then in stock (>5), then out of stock (0)
     products.value = res.data.sort((a, b) => {
@@ -202,7 +202,7 @@ function getStockStatusClass(quantity) {
 
 async function fetchCategories() {
     try {
-        const res = await api.get('/api/categories')
+        const res = await api.get('/categories')
         categories.value = res.data
     } catch (error) {
         console.error('Error fetching categories:', error)

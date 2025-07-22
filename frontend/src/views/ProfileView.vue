@@ -61,9 +61,9 @@ async function fetchUserData(userId = null) {
   try {
     let request = ""
     if (userId) {
-      request = "/api/users/" + userId
+      request = "/users/" + userId
     } else {
-      request = "/api/users/username/" + username
+      request = "/users/username/" + username
     }
     const res = await api.get(request, {
       headers: {
@@ -97,8 +97,7 @@ async function fetchUserData(userId = null) {
 async function handleEdit() {
   try {
     const userId = localStorage.getItem('userId')
-    const res = await fetch("http://localhost:8080/api/users/" + userId, {
-      method: "PUT",
+    const res = await api.put("/users/" + userId, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + token,
@@ -123,8 +122,7 @@ async function handleDelete() {
 
   try {
     const userId = localStorage.getItem('userId')
-    const res = await fetch("http://localhost:8080/api/users/" + userId, {
-      method: "DELETE",
+    const res = await api.delete("/users/" + userId, {
       headers: {
         Authorization: "Bearer " + token,
       },

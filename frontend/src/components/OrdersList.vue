@@ -230,7 +230,7 @@ async function fetchOrders() {
     
     try {
         const token = auth.token
-        const res = await api.get('/api/orders/admin/all', {
+        const res = await api.get('/orders/admin/all', {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + token,
@@ -257,7 +257,7 @@ async function updateOrderStatus(orderId, newStatus) {
         isUpdating.value = orderId
         const token = auth.token
         
-        await api.patch(`/api/orders/admin/${orderId}/status`, 
+        await api.put(`/orders/admin/${orderId}/status`, 
             { status: newStatus },
             {
                 headers: {

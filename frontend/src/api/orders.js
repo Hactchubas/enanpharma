@@ -12,7 +12,7 @@ const getAuthHeaders = () => {
 
 // Create a new order
 export const createOrder = async (orderData) => {
-    const response = await api.post('/api/orders', orderData, {
+    const response = await api.post('/orders', orderData, {
         headers: getAuthHeaders()
     })
     return response.data
@@ -20,7 +20,7 @@ export const createOrder = async (orderData) => {
 
 // Get all orders for current user
 export const getUserOrders = async () => {
-    const response = await api.get('/api/orders', {
+    const response = await api.get('/orders', {
         headers: getAuthHeaders()
     })
     return response.data
@@ -28,7 +28,7 @@ export const getUserOrders = async () => {
 
 // Get specific order by ID
 export const getOrderById = async (orderId) => {
-    const response = await api.get(`/api/orders/${orderId}`, {
+    const response = await api.get(`/orders/${orderId}`, {
         headers: getAuthHeaders()
     })
     return response.data
@@ -36,7 +36,7 @@ export const getOrderById = async (orderId) => {
 
 // Cancel order
 export const cancelOrder = async (orderId) => {
-    const response = await api.post(`/api/orders/${orderId}/cancel`, {}, {
+    const response = await api.post(`/orders/${orderId}/cancel`, {}, {
         headers: getAuthHeaders()
     })
     return response.data
@@ -44,14 +44,14 @@ export const cancelOrder = async (orderId) => {
 
 // Admin endpoints
 export const getAllOrders = async () => {
-    const response = await api.get('/api/orders/admin/all', {
+    const response = await api.get('/orders/admin/all', {
         headers: getAuthHeaders()
     })
     return response.data
 }
 
 export const updateOrderStatus = async (orderId, status) => {
-    const response = await api.put(`/api/orders/admin/${orderId}/status`, { status }, {
+    const response = await api.put(`/orders/admin/${orderId}/status`, { status }, {
         headers: getAuthHeaders()
     })
     return response.data

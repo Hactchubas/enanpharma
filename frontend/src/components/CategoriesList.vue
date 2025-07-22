@@ -131,7 +131,7 @@ async function fetchCategories() {
         return
     }
     const token = auth.token
-    const res = await api.get("/api/categories", {
+    const res = await api.get("/categories", {
         headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,
@@ -160,7 +160,7 @@ async function executeDelete() {
     }
     
     const token = auth.token
-    await api.delete(`/api/categories/${categoryToDelete.value.id}`, {
+    await api.delete(`/categories/${categoryToDelete.value.id}`, {
         headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,
@@ -177,7 +177,7 @@ async function deleteCategory(id) {
         return
     }
     const token = auth.token
-    await api.delete(`/api/categories/${id}`, {
+    await api.delete(`/categories/${id}`, {
         headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,

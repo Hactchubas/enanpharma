@@ -22,10 +22,6 @@
         <label>Last Name</label>
         <input v-model="form.lastName" />
       </div>
-      <div class="form-group">
-        <label>Address</label>
-        <input v-model="form.address" />
-      </div>
       <div class="form-actions">
         <button type="submit">Sign Up</button>
       </div>
@@ -55,7 +51,7 @@ const form = reactive({
 
 const handleSignUp = async () => {
   try {
-    await api.post('/api/auth/signup', form)
+    await api.post('/auth/signup', form)
     alert("User created!")
     router.push('/login')
   } catch (err) {

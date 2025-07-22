@@ -6,7 +6,7 @@ const userFromStorage = localStorage.getItem("username");
 
 async function getUserInfo() {
   try {
-    const res = await api.get("/api/users/username/" + auth.user, {
+    const res = await api.get("/users/username/" + auth.user, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + auth.token,
