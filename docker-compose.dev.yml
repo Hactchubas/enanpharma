@@ -1,0 +1,46 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/enanpharma
+      - SPRING_DATASOURCE_USERNAME=application
+      - SPRING_DATASOURCE_PASSWORD=123
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"  # Vite dev server port
+    volumes:
+      - ./frontend:/app  # Mount source code for hot reload
+      - /app/node_modules  # Prevent overwriting node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Enable polling for file changes (helps with Docker)
+    depends_on:
+      - backend
+    stdin_open: true  # Keep container running in interactive mode
+    tty: true
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=enanpharma
+      - POSTGRES_USER=application
+      - POSTGRES_PASSWORD=123
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./backend/src/main/resources/db/migration:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U application -d enanpharma"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
