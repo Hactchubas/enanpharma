@@ -4,7 +4,7 @@ import { ref, onMounted, onUpdated } from "vue";
 import { useRouter } from 'vue-router'
 import { useCart } from '@/composables/useCart.js'
 const router = useRouter()
-const { totalItems } = useCart()
+const { totalItems, reloadCart } = useCart()
 
 const info = ref({
     isAdmin: false
@@ -31,6 +31,7 @@ async function fetchUserInfo() {
 
 function logout() {
     auth.logout();
+    reloadCart(); // Recarregar carrinho após logout para limpar dados do usuário anterior
     router.push('/')
 }
 
@@ -78,7 +79,7 @@ const registerOptions = [
                         </div>
                         <div class="user-info">
                             <span class="user-name">{{ auth.user }}</span>
-                            <span class="user-label">Profile</span>
+                            <span class="user-label">Perfil</span>
                         </div>
                     </router-link>
                 </div>
@@ -86,6 +87,22 @@ const registerOptions = [
             
             <div class="navbar-right">
                 <div class="nav-actions">
+                <button 
+                    v-if="info.isAdmin" 
+                    @click="toggleAdminPanel"
+                     class="nav-btn admin-panel-btn"
+                     :class="{ 'active': isAdminPanelExpanded }"
+                    :aria-expanded="isAdminPanelExpanded"
+                     aria-label="Toggle Admin Panel"
+                 >
+                    <div class="btn-icon-wrapper">
+                        <svg class="btn-icon admin-icon" :class="{ 'rotated': isAdminPanelExpanded }" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 6.253V10C12 10.2652 12.1054 10.5196 12.2929 10.7071L15 13.414V16.5C15 16.776 14.776 17 14.5 17H13V15.5C13 15.224 12.776 15 12.5 15H11.5C11.224 15 11 15.224 11 15.5V17H9.5C9.224 17 9 16.776 9 16.5V13.414L11.7071 10.7071C11.8946 10.5196 12 10.2652 12 10V6.253C12.0856 6.253 12.1712 6.253 12.2568 6.253" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M5 8L12 3L19 8V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="btn-text">Administrador</span>
+                </button>
                     <router-link to="/cart" class="nav-btn cart-btn">
                         <div class="btn-icon-wrapper">
                             <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -112,22 +129,6 @@ const registerOptions = [
                             <span class="btn-text">Pedidos</span>
                         </router-link>
                         
-                        <button 
-                            v-if="info.isAdmin" 
-                            @click="toggleAdminPanel"
-                            class="nav-btn admin-panel-btn"
-                            :class="{ 'active': isAdminPanelExpanded }"
-                            :aria-expanded="isAdminPanelExpanded"
-                            aria-label="Toggle Admin Panel"
-                        >
-                            <div class="btn-icon-wrapper">
-                                <svg class="btn-icon admin-icon" :class="{ 'rotated': isAdminPanelExpanded }" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 6.253V10C12 10.2652 12.1054 10.5196 12.2929 10.7071L15 13.414V16.5C15 16.776 14.776 17 14.5 17H13V15.5C13 15.224 12.776 15 12.5 15H11.5C11.224 15 11 15.224 11 15.5V17H9.5C9.224 17 9 16.776 9 16.5V13.414L11.7071 10.7071C11.8946 10.5196 12 10.2652 12 10V6.253C12.0856 6.253 12.1712 6.253 12.2568 6.253" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M5 8L12 3L19 8V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <span class="btn-text">Admin</span>
-                        </button>
                         
                         <button @click="logout" class="nav-btn logout-btn">
                             <div class="btn-icon-wrapper">
@@ -173,19 +174,19 @@ const registerOptions = [
             <div v-if="info.isAdmin && isAdminPanelExpanded" class="admin-panel-dropdown">
                 <div class="admin-panel-content">
                     <div class="panel-header">
-                        <h3 class="panel-title">Administrative Controls</h3>
-                        <p class="panel-subtitle">Manage system resources and content</p>
+                        <h3 class="panel-title">Controles Administrativos</h3>
+                        <p class="panel-subtitle">Gerencie aqui os recursos da Enanpharma</p>
                     </div>
                     
                     <nav class="admin-nav">
                         <div class="nav-section">
-                            <h4 class="section-title">Content Management</h4>
+                            <h4 class="section-title">Genrenciamento de Conteúdo</h4>
                             <div class="nav-links">
                                 <router-link to="/categories" class="nav-link" @click="isAdminPanelExpanded = false">
                                     <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
                                         <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                     </svg>
-                                    <span>Categories</span>
+                                    <span>Categorias</span>
                                 </router-link>
                                 
                                 <router-link to="/products" class="nav-link" @click="isAdminPanelExpanded = false">
@@ -193,19 +194,27 @@ const registerOptions = [
                                         <path d="M20 7L12 3L4 7L12 11L20 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M4 7V17L12 21L20 17V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    <span>Products</span>
+                                    <span>Produtos</span>
                                 </router-link>
                             </div>
                         </div>
 
                         <div class="nav-section">
-                            <h4 class="section-title">System</h4>
+                            <h4 class="section-title">Sistema</h4>
                             <div class="nav-links">
                                 <router-link to="/admin/orders" class="nav-link" @click="isAdminPanelExpanded = false">
                                     <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
                                         <path d="M9 11H15M9 15H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L19.7071 9.70711C19.8946 9.89464 20 10.149 20 10.4142V19C20 20.1046 19.1046 21 18 21H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    <span>Orders Overview</span>
+                                    <span>Pedidos</span>
+                                </router-link>
+                                
+                                <router-link to="/admin/users" class="nav-link" @click="isAdminPanelExpanded = false">
+                                    <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span>Usuários</span>
                                 </router-link>
                             </div>
                         </div>

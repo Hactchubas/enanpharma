@@ -9,6 +9,7 @@ import CartView from "../views/CartView.vue";
 import CheckoutView from "../views/CheckoutView.vue";
 import OrdersView from "../views/OrdersView.vue";
 import OrdersOverview from "../views/OrdersOverview.vue";
+import UsersOverview from "../views/UsersOverview.vue";
 import auth from "../api/auth.js";
 
 const routes = [
@@ -48,6 +49,19 @@ const routes = [
     path: "/admin/orders",
     name: "AdminOrders",
     component: OrdersOverview,
+    beforeEnter: async (to, from, next) => {
+      const userInfo = await auth.getUserInfo();
+      if (auth.isLoggedIn() && userInfo && userInfo.roles.includes('ADMIN')) {
+        next();
+      } else {
+        next("/");
+      }
+    },
+  },
+  {
+    path: "/admin/users",
+    name: "AdminUsers",
+    component: UsersOverview,
     beforeEnter: async (to, from, next) => {
       const userInfo = await auth.getUserInfo();
       if (auth.isLoggedIn() && userInfo && userInfo.roles.includes('ADMIN')) {

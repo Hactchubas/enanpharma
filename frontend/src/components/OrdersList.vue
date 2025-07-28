@@ -29,7 +29,7 @@
                                         <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
                                     </svg>
-                                    Client
+                                    Cliente
                                 </div>
                             </th>
                             <th class="th-date">
@@ -40,7 +40,7 @@
                                         <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
                                         <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
                                     </svg>
-                                Order date
+                                Data do Pedido
                                 </div>
                             </th>
                             <th class="th-items">
@@ -50,7 +50,7 @@
                                         <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    Items
+                                    Itens
                                 </div>
                             </th>
                             <th class="th-total">
@@ -83,7 +83,7 @@
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                         <path d="M12 20H21M3 20H6.5M6.5 20C7.32843 20 8 19.3284 8 18.5C8 17.6716 7.32843 17 6.5 17C5.67157 17 5 17.6716 5 18.5C5 19.3284 5.67157 20 6.5 20ZM16 4H19M16 4C16 5.1046 16.8954 6 18 6C19.1046 6 20 5.1046 20 4C20 2.8954 19.1046 2 18 2C16.8954 2 16 2.8954 16 4ZM16 4H3M8 12H21M3 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    Actions
+                                    Ações
                                 </div>
                             </th>
                         </tr>

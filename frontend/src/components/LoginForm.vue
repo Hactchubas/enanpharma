@@ -56,11 +56,13 @@ import { ref } from "vue";
 import api from "../api/axios";
 import { useRouter } from 'vue-router'
 import auth from '../api/auth.js'
+import { useCart } from '@/composables/useCart.js'
 
 const username = ref('')
 const password = ref('')
 const error = ref('')
 const router = useRouter()
+const { reloadCart } = useCart()
 
 
 async function login() {
@@ -73,6 +75,7 @@ async function login() {
         localStorage.setItem("username", username.value);
 
         auth.login(response.data.accessToken, username.value)
+        reloadCart(); // Recarregar carrinho após login para carregar dados específicos do usuário
         router.push('/')
         return true;
     } catch (err) {

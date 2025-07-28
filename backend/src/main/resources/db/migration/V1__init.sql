@@ -208,10 +208,7 @@ ALTER TABLE ONLY public.role ALTER COLUMN id SET DEFAULT nextval('public.role_id
 --
 
 INSERT INTO public.app_user (id, username, password, first_name, last_name, email ) VALUES
-(1, 'admin', '$2a$10$e.g.BCryptHashForPassword', 'Admin', 'User', 'admin@example.com'),
-(2, 'user1', '$2a$10$e.g.BCryptHashForPassword', 'Test', 'User1', 'user1@example.com'),
-(3, 'user2', '$2a$10$e.g.BCryptHashForPassword', 'Test', 'User2', 'user2@example.com'),
-(4, 'k', '$2a$10$mNb9BtaBJY2cA0ntpMGMkeD6pTBT7QxRCTKi1PBgPEw.M7PyQQXE2', 'k', 'k', 'k@k.com');
+(1, 'k', '$2a$10$mNb9BtaBJY2cA0ntpMGMkeD6pTBT7QxRCTKi1PBgPEw.M7PyQQXE2', 'k', 'k', 'k@k.com');
 
 
 --
@@ -228,11 +225,7 @@ COPY public.role (id, name) FROM stdin;
 -- Data for Name: user_roles; Type: TABLE DATA; Schema: public; Owner: application
 --
 
-INSERT INTO public.user_roles (user_id, role_id) VALUES
-(1, 2), -- admin user (id 1) has ADMIN role (id 2)
-(2, 1), -- user1 (id 2) has USER role (id 1)
-(3, 1), -- user2 (id 3) has USER role (id 1)
-(4, 2);
+INSERT INTO public.user_roles (user_id, role_id) VALUES (1, 2); -- admin user (id 1) has ADMIN role (id 2)
 
 
 --

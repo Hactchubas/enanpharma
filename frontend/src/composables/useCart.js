@@ -1,19 +1,30 @@
 import { ref, computed } from 'vue'
+import { auth } from '@/api/auth'
 
 const cartItems = ref([])
 
 export function useCart() {
+    // Obter chave do localStorage específica para o usuário
+    const getCartKey = () => {
+        const username = auth.user
+        return username ? `enanpharma-cart-${username}` : 'enanpharma-cart'
+    }
+
     // Carregar carrinho do localStorage na inicialização
     const loadCart = () => {
-        const savedCart = localStorage.getItem('enanpharma-cart')
+        const cartKey = getCartKey()
+        const savedCart = localStorage.getItem(cartKey)
         if (savedCart) {
             cartItems.value = JSON.parse(savedCart)
+        } else {
+            cartItems.value = []
         }
     }
 
     // Salvar carrinho no localStorage
     const saveCart = () => {
-        localStorage.setItem('enanpharma-cart', JSON.stringify(cartItems.value))
+        const cartKey = getCartKey()
+        localStorage.setItem(cartKey, JSON.stringify(cartItems.value))
     }
 
     // Adicionar produto ao carrinho
@@ -66,6 +77,11 @@ export function useCart() {
         saveCart()
     }
 
+    // Recarregar carrinho (útil quando o usuário faz login/logout)
+    const reloadCart = () => {
+        loadCart()
+    }
+
     // Computadas
     const totalItems = computed(() => {
         return cartItems.value.reduce((total, item) => total + item.quantity, 0)
@@ -102,6 +118,7 @@ export function useCart() {
         removeFromCart,
         updateQuantity,
         clearCart,
+        reloadCart,
         isInCart,
         getQuantityInCart
     }

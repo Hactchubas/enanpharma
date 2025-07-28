@@ -42,6 +42,12 @@ export const auth = reactive({
   },
 
   logout() {
+    // Limpar carrinho do usuário atual antes de fazer logout
+    if (auth.user) {
+      const cartKey = `enanpharma-cart-${auth.user}`;
+      localStorage.removeItem(cartKey);
+    }
+    
     auth.token = null;
     auth.user = null;
     localStorage.removeItem("token");
