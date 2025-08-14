@@ -1,0 +1,44 @@
+name: enanpharma
+services:
+- name: backend
+  source_dir: /backend
+  github:
+    repo: Hactchubas/enanpharma
+    branch: master
+  build_command: mvn clean package -DskipTests
+  run_command: java -jar target/backend-0.0.1-SNAPSHOT.jar
+  environment_slug: java
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 8080
+  envs:
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: ${db.DATABASE_URL}
+  - key: SPRING_PROFILES_ACTIVE
+    scope: RUN_TIME
+    value: production
+
+- name: frontend
+  source_dir: /frontend
+  github:
+    repo: Hactchubas/enanpharma
+    branch: master
+  build_command: npm ci && npm run build
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 80
+  routes:
+  - path: /
+  envs:
+  - key: VITE_API_BASE_URL
+    scope: BUILD_TIME
+    value: ${backend.PUBLIC_URL}
+
+databases:
+- name: db
+  engine: PG
+  version: "15"
+  production: false
+  size: basic
