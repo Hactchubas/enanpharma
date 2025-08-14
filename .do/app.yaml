@@ -1,7 +1,7 @@
 name: enanpharma
 services:
 - name: backend
-  source_dir: /backend
+  source_dir: backend
   github:
     repo: Hactchubas/enanpharma
     branch: master
@@ -20,7 +20,7 @@ services:
     value: production
 
 - name: frontend
-  source_dir: /frontend
+  source_dir: frontend
   github:
     repo: Hactchubas/enanpharma
     branch: master
