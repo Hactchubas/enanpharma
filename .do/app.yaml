@@ -15,6 +15,12 @@ services:
   - key: DATABASE_URL
     scope: RUN_TIME
     value: ${db.DATABASE_URL}
+  - key: DATABASE_USERNAME
+    scope: RUN_TIME
+    value: ${db.USERNAME}
+  - key: DATABASE_PASSWORD
+    scope: RUN_TIME
+    value: ${db.PASSWORD}
   - key: SPRING_PROFILES_ACTIVE
     scope: RUN_TIME
     value: production
