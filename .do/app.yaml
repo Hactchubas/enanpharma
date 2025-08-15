@@ -24,6 +24,10 @@ services:
   - key: SPRING_PROFILES_ACTIVE
     scope: RUN_TIME
     value: production
+  - key: JWT_SECRET
+    scope: RUN_TIME
+    type: SECRET
+    value: YourVeryLongSecretKeyThatIsAtLeast32BytesLong123!
 
 - name: frontend
   source_dir: frontend

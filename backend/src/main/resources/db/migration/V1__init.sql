@@ -34,7 +34,6 @@ CREATE TABLE public.app_user (
 );
 
 
-ALTER TABLE public.app_user OWNER TO application;
 
 --
 -- Name: app_user_id_seq; Type: SEQUENCE; Schema: public; Owner: application
@@ -48,7 +47,6 @@ CREATE SEQUENCE public.app_user_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.app_user_id_seq OWNER TO application;
 
 --
 -- Name: app_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: application
@@ -74,7 +72,6 @@ INSERT INTO public.category (id, name) VALUES
 
 
 
-ALTER TABLE public.category OWNER TO application;
 
 --
 -- Name: category_id_seq; Type: SEQUENCE; Schema: public; Owner: application
@@ -88,7 +85,6 @@ CREATE SEQUENCE public.category_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.category_id_seq OWNER TO application;
 
 --
 -- Name: category_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: application
@@ -120,7 +116,6 @@ INSERT INTO public.product (id, name, description, category_id, price, image_url
 (7, 'Aspirin', 'Used to reduce pain, fever, or inflammation', 1, 12, '/uploads/products/aspirin.png');
 
 
-ALTER TABLE public.product OWNER TO application;
 
 --
 -- Name: product_id_seq; Type: SEQUENCE; Schema: public; Owner: application
@@ -146,7 +141,6 @@ CREATE TABLE public.role (
 );
 
 
-ALTER TABLE public.role OWNER TO application;
 
 --
 -- Name: role_id_seq; Type: SEQUENCE; Schema: public; Owner: application
@@ -161,7 +155,6 @@ CREATE SEQUENCE public.role_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.role_id_seq OWNER TO application;
 
 --
 -- Name: role_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: application
@@ -180,7 +173,6 @@ CREATE TABLE public.user_roles (
 );
 
 
-ALTER TABLE public.user_roles OWNER TO application;
 
 --
 -- Name: app_user id; Type: DEFAULT; Schema: public; Owner: application
